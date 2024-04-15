@@ -1,13 +1,13 @@
-package com.santhan.dosa;
+package com.santhan.dsa;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class DosaApplication {
+public class DsaApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(DosaApplication.class, args);
+		SpringApplication.run(DsaApplication.class,args);
 	}
 
 }
