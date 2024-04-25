@@ -67,6 +67,35 @@ public class ArraysProblems {
         return second_min;
     }
 
+    public static int thirdMinArray(int[] nums){
+        Long max = Long.MIN_VALUE;
+        Long max_second = Long.MIN_VALUE;
+        Long max_third = Long.MIN_VALUE;
+
+
+
+        for(int i=0;i<nums.length; i++){
+            if(nums[i]>max){
+                max_third =  max_second;
+                max_second = max;
+                max = (long) nums[i];
+            }else if((nums[i]!=max) && nums[i]>max_second){
+                max_third = (long) max_second;
+                max_second = (long) nums[i];
+            }else if((nums[i]!=max && nums[i]!=max_second) && nums[i]>max_third){
+                max_third = (long) nums[i];
+
+
+            }
+        }
+        if(max_third == Long.MIN_VALUE){
+            return Math.toIntExact(max);
+
+        }
+
+        return Math.toIntExact(max_third);
+    }
+
     /*
     *
     * */

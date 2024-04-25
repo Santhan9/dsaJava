@@ -45,11 +45,18 @@ public class ArraysProblemsTest {
     }
 
     @Test
+    public void thirdMinArrayTest(){
+        int[] arr = new int[]{1,2};
+        assertEquals(2,thirdMinArray(arr));
+    }
+
+    @Test
     public void moveZerosToEndTest(){
         int[] arr = new int[]{1,0,4,7,0,6,5,9,6,11,18};
        int[] res = moveZerosToEnd(arr);
         Arrays.stream(res).forEach(System.out::println);
        assertEquals(0,res[arr.length-2]);
+
 
     }
     @Test
