@@ -1,18 +1,16 @@
 package com.santhan.dsa.datastructures;
 
-import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+class DoublyLinkedListTest {
 
-class SinglyLinkedListTest {
-
-    SinglyLinkedList list ;
+    DoublyLinkedList list;
 
     @Test
     void addAtHeadTest() {
-        list = new SinglyLinkedList();
+        list = new DoublyLinkedList();
         list.addAtHead(10);
         assertEquals(10,list.get(0));
 
@@ -20,7 +18,7 @@ class SinglyLinkedListTest {
 
     @Test
     void addAtHeadMultipleTest1() {
-        list = new SinglyLinkedList();
+        list = new DoublyLinkedList();
         list.addAtHead(10);
         list.addAtHead(11);
         list.addAtHead(12);
@@ -30,7 +28,7 @@ class SinglyLinkedListTest {
 
     @Test
     void addAtHeadMultipleTest2() {
-        list = new SinglyLinkedList();
+        list = new DoublyLinkedList();
         list.addAtHead(10);
         list.addAtHead(11);
         list.addAtHead(12);
@@ -40,7 +38,7 @@ class SinglyLinkedListTest {
 
     @Test
     void addAtHeadMultipleTest3() {
-        list = new SinglyLinkedList();
+        list = new DoublyLinkedList();
         list.addAtHead(10);
         list.addAtHead(11);
         list.addAtHead(12);
@@ -50,7 +48,7 @@ class SinglyLinkedListTest {
 
     @Test
     void addAtTailTest() {
-        list = new SinglyLinkedList();
+        list = new DoublyLinkedList();
         list.addAtHead(10);
         list.addAtHead(11);
         list.addAtTail(15);
@@ -60,21 +58,21 @@ class SinglyLinkedListTest {
 
     @Test
     void getTest1() {
-        list = new SinglyLinkedList();
+        list = new DoublyLinkedList();
         list.addAtTail(10);
         assertEquals(10,list.get(0));
     }
 
     @Test
     void getTest2() {
-        list = new SinglyLinkedList();
+        list = new DoublyLinkedList();
 
         assertEquals(-1,list.get(0));
     }
 
     @Test
     void getTest3() {
-        list = new SinglyLinkedList();
+        list = new DoublyLinkedList();
         list.addAtTail(15);
         list.addAtTail(1);
         assertEquals(1,list.get(1));
@@ -82,7 +80,7 @@ class SinglyLinkedListTest {
 
     @Test
     void addAtIndexTest(){
-        list = new SinglyLinkedList();
+        list = new DoublyLinkedList();
         list.addAtHead(10);
         list.addAtHead(11);
         list.addAtHead(11);
@@ -96,7 +94,7 @@ class SinglyLinkedListTest {
 
     @Test
     void getLengthTest(){
-        list = new SinglyLinkedList();
+        list = new DoublyLinkedList();
         list.addAtHead(10);
         list.addAtHead(11);
         list.addAtHead(11);
@@ -108,7 +106,7 @@ class SinglyLinkedListTest {
 
     @Test
     void deleteAtIndexTest1(){
-        list = new SinglyLinkedList();
+        list = new DoublyLinkedList();
         list.addAtTail(15);
         list.deleteAtIndex(0);
         assertEquals(-1,list.get(1));
@@ -117,7 +115,7 @@ class SinglyLinkedListTest {
 
     @Test
     void deleteAtIndexTest2(){
-        list = new SinglyLinkedList();
+        list = new DoublyLinkedList();
         list.addAtTail(15);
         list.addAtTail(14);
         list.deleteAtIndex(0);
@@ -128,7 +126,7 @@ class SinglyLinkedListTest {
 
     @Test
     void deleteAtIndexTest3(){
-        list = new SinglyLinkedList();
+        list = new DoublyLinkedList();
         list.addAtTail(15);
         list.addAtTail(14);
         list.deleteAtIndex(1);
@@ -138,7 +136,7 @@ class SinglyLinkedListTest {
 
     @Test
     void deleteAtIndexTest4(){
-        list = new SinglyLinkedList();
+        list = new DoublyLinkedList();
         list.addAtTail(15);
         list.addAtTail(14);
         list.addAtTail(13);
@@ -153,7 +151,7 @@ class SinglyLinkedListTest {
 
     @Test
     void linkedListE2ETest(){
-        list = new SinglyLinkedList();
+        list = new DoublyLinkedList();
         list.addAtHead(1);
         list.addAtTail(3);
         list.addAtIndex(1,2);
@@ -169,7 +167,4 @@ class SinglyLinkedListTest {
 
 
     }
-
-
-
 }

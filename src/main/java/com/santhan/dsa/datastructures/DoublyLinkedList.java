@@ -1,6 +1,7 @@
 package com.santhan.dsa.datastructures;
 
-public class SinglyLinkedList {
+public class DoublyLinkedList {
+
 
     Node head;
 
@@ -8,14 +9,16 @@ public class SinglyLinkedList {
     static class Node{
         int val;
         Node next;
-        Node(int val, Node next){
+        Node prev;
+        Node(int val, Node next, Node prev){
             this.val = val ;
             this.next = next;
+            this.prev = prev;
         }
 
     }
 
-    public SinglyLinkedList() {
+    public DoublyLinkedList() {
 
     }
 
@@ -29,16 +32,17 @@ public class SinglyLinkedList {
             curr = curr.next;
             i++;
         }
-       return i!=index ? -1 : curr.val;
+        return i!=index ? -1 : curr.val;
     }
 
     public void addAtHead(int val) {
 
         if(head == null){
-            head = new Node(val,null);
+            head = new Node(val,null,null);
         }else{
             Node temp = head;
-            head = new Node(val,temp);
+            head = new Node(val,temp,null);
+            temp.prev = head;
         }
 
     }
@@ -52,7 +56,8 @@ public class SinglyLinkedList {
         while(curr.next!=null){
             curr= curr.next;
         }
-        curr.next = new Node(val,null);
+        curr.next = new Node(val,null,curr);
+
     }
 
     public void addAtIndex(int index, int val) {
@@ -75,7 +80,8 @@ public class SinglyLinkedList {
         }
 
         Node temp = curr.next;
-        curr.next = new Node(val,temp);
+        curr.next = new Node(val,temp,curr);
+        temp.prev = curr.next;
 
 
 
@@ -99,6 +105,9 @@ public class SinglyLinkedList {
         if(index < getLength()){
             if(index == 0){
                 head = head.next;
+                if(head !=null){
+                    head.prev = null;
+                }
                 return;
             }
             int i =0;
@@ -109,9 +118,10 @@ public class SinglyLinkedList {
             }
             Node del = curr.next;
             curr.next = del.next;
+            if(del.next!=null) {
+                del.next.prev = curr;
+            }
         }
 
     }
-
-
 }
